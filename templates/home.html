@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <div class="introduction">
+        <div class="title">
+            <img src="{{url_for('static', filename='style/photos/First.png')}}" alt="Recycle image" class="recycle">
+            <br><br>
+            <img src="{{url_for('static', filename='style/photos/title.png')}}" alt="Recycle image" class="recycle">
+        </div>
+
+        <div class="navbar">
+            <div class="item"><a href="signin">Account</a></div>
+            <div class="item"><a href="materials">Materials Accepted</a></div>
+            <div class="item"><a href="contact">Contact</a></div>
+
+        </div>
+    </div>
+    <div class="moto">
+        <h1>Recycle the present
+            <br>save the future</h1>
+        <section class="bottle">
+            <h2 style="color: transparent;">UnderDogzz</h2>
+        </section>
+    </div>
+
+    <h3 style="margin-top:5%">Collecting Points</h3>
+    <div id="map"></div>
+
+    <script>
+        const json_data = '{{json_data | tojson | safe}}';
+    </script>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuhwkYuhy5XiuuKG7FAbiosxUgZAU_J4g&callback=initMap&v=weekly"
+        async>
+    </script>
+
+    <h3 style="margin-top:5%">Which one is the nearest?</h3>
+    <div id="nearest">
+        <p>Those are the nearest containers:</p>
+        <p id="nearestButtonPres"></p>
+        <p style="display: none;" id="nearestContainer"></p>
+
+        <button style="width:250px;height:70px;background-color: #4CAF50;color: white;" onclick="nearest('nearest1')" > <p id="nearest1"></p> </button>
+        <button style="width:250px;height:70px;background-color: #4CAF50;color: white;" onclick="nearest('nearest2')" > <p id="nearest2"></p> </button>
+        <button style="width:250px;height:70px;background-color: #4CAF50;color: white;" onclick="nearest('nearest3')" > <p id="nearest3"></p> </button>
+    </div>
+    <div id="javatohtml" style="display: none">
+
+    </div>
+
+    <p id="setStyle" style="display: none;">{{styleOf}}</p>
+    <p id="setStyleM" style="display: none;">{{styleM}}</p>
+
+    <h3 style="margin-top:5%">Empty</h3>
+
+    <div style="display:block" id="EmptyDiv">
+        <div id="EMPTY">
+            <p>Select on the map if a container is empty.</p>
+            <p id="emptyContainerPres">none</p>
+            <p  id="emptyContainer" style="display: none"></p>
+            <p  id="emptyContainerLat" style="display: none"></p>
+            <p  id="emptyContainerLong" style="display: none"></p>
+
+            <button onclick="empty('percent1')" > <p id="percent1">50%</p> </button>
+            <button onclick="empty('percent2')" > <p id="percent2">70%</p> </button>
+            <button onclick="empty('percent3')" > <p id="percent3">100%</p> </button>
+        </div>
+
+        <div id="FEEDBACK" style="display: none;">
+            <p>Thank you for your feedback!</p>
+        </div>
+    </div>
+
+    <p id="messageToSignIn" style="display:none">In order to give feedback you need to sigin/signup on the page!</p>
+
+    <script>
+        x=document.getElementById("setStyle").innerHTML
+        document.getElementById("EmptyDiv").style.display = x;
+
+        y=document.getElementById("setStyleM").innerHTML
+        document.getElementById("messageToSignIn").style.display = y;
+    </script>
+
+    <script>
+        /*function nearest() {
+
+        }*/
+
+        function nearest(val) {
+            for(let i=0;i < windows.length;i++) {
+                const point = windows[i];
+
+                document.getElementById("javatohtml").innerHTML = point.title;
+
+                if (document.getElementById("javatohtml").innerHTML === document.getElementById(val).innerHTML) {
+                    console.log(point.title)
+
+                    const infowindow = new google.maps.InfoWindow({
+                        content: point.title,
+                    });
+
+                    infowindow.open({
+                        anchor: point,
+                        map,
+                        shouldFocus: false,
+                    });
+
+                    document.getElementById("emptyContainerPres").innerHTML = point.title + " is empty: "
+                    document.getElementById("emptyContainer").innerHTML = point.title
+
+                }
+            }
+        }
+
+        function empty(val)
+        {
+            x = document.getElementById("emptyContainer").innerHTML
+            a = document.getElementById("emptyContainerLat").innerHTML
+            b = document.getElementById("emptyContainerLong").innerHTML
+            y = document.getElementById(val).innerHTML
+            console.log(x + " " + y);
+            $.post("/emptyCont", {"name":x, "percent":y, "lat":a, "long":b})
+
+            document.getElementById("EMPTY").style = "display:none;"
+            document.getElementById("FEEDBACK").style = "display:block;"
+
+
+        }
+
+        
+    </script>
+    </div>
+
+
+    <div class="contact">
+        <h2>Contact us</h2>
+        <p>Bulevardul Constantin Diaconovici Loga 1, Timișoara 300030</p>
+        <p>+40256408300</p>
+
+        <form action="#" method="POST">
+            <p>Name</p>
+            <input type="text" name="name" placeholder="Enter your name">
+            <br>
+            <p>Email</p>
+            <input type="text" name="email" placeholder="Enter your email">
+            <br>
+            <p>Subject</p>
+            <textarea type="text" name="subject" class="subject" placeholder="Type the subject"></textarea>
+            <br>
+            <p>Message</p>
+            <textarea type="text" name="message" class="message" placeholder="Type your message here.."></textarea>
+            <br>
+            <input type="submit" class="submit" value="Send">
+        </form>
+        <br><br>
+    </div>
+
+    <br><br>
+
+    <div class="team">
+        <h3 style="color: #2d357d">Team</h3>
+        <p style="color: #2d357d"><b>Cristian:</b> Design, Logo, Map Design</p>
+        <p style="color: #2d357d"><b>Iulian:</b> Backend, Frontend, Javascript Interactions</p>
+        <p style="color: #2d357d"><b>Ovidiu:</b> Location Algorithms, UI/UX</p>
+        <p style="color: #2d357d"><b>Paul:</b> Documentation, UI/UX</p>
+        <p style="color: #2d357d"><b>Traian:</b> Backend, Frontend, Javascript Interactions</p>
+        <img src="{{url_for('static', filename='style/photos/black-first.png')}}" alt="Recycle image" class="recycle">
+    </div>
+    <br><br>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Materials accepted{% endblock %}
+
+{% block body %}
+
+<div class="introduction">
+    <div class="title">
+        <img src="{{url_for('static', filename='style/photos/First.png')}}" alt="Recycle image" class="recycle">
+        <br><br>
+        <img src="{{url_for('static', filename='style/photos/title.png')}}" alt="Recycle image" class="recycle">
+    </div>
+
+    <div class="navbar">
+        <div class="item"><a href="/">Home</a></div>
+        <div class="item"><a href="signin">Account</a></div>
+        <div class="item"><a href="materials"><u>Materials Accepted</u></a></div>
+        <div class="item"><a href="contact">Contact</a></div>
+    </div>
+</div>
+
+<div class="content">
+    <h2>Accepted Materials</h2>
+<p class="p">Here to Keep the World Clean</p>
+<p>At uCycle, all of your recycling needs are made easy. Whether you want to deposit materials ranging from metals, paper, electronics and plastics — you name it, we do it! From cardboard boxes to plastic bottles, our state-of-the-art facilities are prepared to handle large volumes on a daily basis. Have questions about separating your materials, or not sure if we accept a specific type of material? Our professional and knowledgeable staff is available on-site or by phone to assist with any questions. Get in touch today and see how we can help!</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+#map {
+    margin-top: 5%;
+    height: 70%;
+    width:80%;
+    margin: auto;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cityhall</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style/cityhall.css')}}" />
+        
+    </head>
+    <body>
+        <br><br><br>
+        <div id="map"></div>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuhwkYuhy5XiuuKG7FAbiosxUgZAU_J4g&callback=initMap&v=weekly"
+            async>
+        </script>
+
+        {% for i in range(numberOf50) %}
+            <p style="display:none" id="nameOf50{{i}}">{{allAt50[i][0]}}</p>
+            <p style="display:none" id="latOf50{{i}}">{{allAt50[i][1]}}</p>
+            <p style="display:none" id="longOf50{{i}}">{{allAt50[i][2]}}</p>
+            {% if i == numberOf50 - 1 %}
+                <p style="display:none" id="nrOf50">{{i+1}}</p>
+            {% endif %}
+        {% endfor %}
+
+        {% for i in range(numberOf70) %}
+            <p style="display:none" id="nameOf70{{i}}">{{allAt70[i][0]}}</p>
+            <p style="display:none" id="latOf70{{i}}">{{allAt70[i][1]}}</p>
+            <p style="display:none" id="longOf70{{i}}">{{allAt70[i][2]}}</p>
+            {% if i == numberOf70 - 1 %}
+                <p style="display:none" id="nrOf70">{{i+1}}</p>
+            {% endif %}
+        {% endfor %}
+
+        {% for i in range(numberOf100) %}
+            <p style="display:none" id="nameOf100{{i}}">{{allAt100[i][0]}}</p>
+            <p style="display:none" id="latOf100{{i}}">{{allAt100[i][1]}}</p>
+            <p style="display:none" id="longOf100{{i}}">{{allAt100[i][2]}}</p>
+            {% if i == numberOf100 - 1 %}
+                <p style="display:none"  id="nrOf100">{{i+1}}</p>
+            {% endif %}
+        {% endfor %}
+
+        <script src="{{url_for('static', filename='js/cityhall.js')}}"></script>
+    </body>
+</html>

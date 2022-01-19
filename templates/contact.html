@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Materials accepted{% endblock %}
+
+{% block body %}
+
+<div class="introduction">
+    <div class="title">
+        <img src="{{url_for('static', filename='style/photos/First.png')}}" alt="Recycle image" class="recycle">
+        <br><br>
+        <img src="{{url_for('static', filename='style/photos/title.png')}}" alt="Recycle image" class="recycle">
+    </div>
+    <div class="navbar">
+        <div class="item"><a href="/">Home</a></div>
+        <div class="item"><a href="signin">Account</a></div>
+        <div class="item"><a href="materials">Materials Accepted</a></div>
+        <div class="item"><a href="contact"><u>Contact</u></a></div>
+    </div>
+</div>
+
+<div class="contact">
+    <h2>Contact us</h2>
+    <p>Bulevardul Constantin Diaconovici Loga 1, Timișoara 300030</p>
+    <p>+40256408300</p>
+
+    <form action="#" method="POST">
+        <p>Name</p>
+        <input type="text" name="name" placeholder="Enter your name">
+        <br>
+        <p>Email</p>
+        <input type="text" name="email" placeholder="Enter your email">
+        <br>
+        <p>Subject</p>
+        <textarea type="text" name="subject" class="subject" placeholder="Type the subject"></textarea>
+        <br>
+        <p>Message</p>
+        <textarea type="text" name="message" class="message" placeholder="Type your message here.."></textarea>
+        <br>
+        <input type="submit" class="submit" value="Send">
+    </form>
+    <br><br>
+</div>
+
+<br><br>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %} Sign up {% endblock %}
+
+{% block body %}
+
+<di class="introduction">
+    <div class="title">
+        <img src="{{url_for('static', filename='style/photos/First.png')}}" alt="Recycle image" class="recycle">
+        <br><br>
+        <img src="{{url_for('static', filename='style/photos/title.png')}}" alt="Recycle image" class="recycle">
+    </div>
+
+
+    <div class="navbar">
+        <div style="margin-top: -15px;" class="item"><a href="/">Home</a></div>
+        <div style="margin-top: -15px;" class="item"><a href="signin" >Sign in</a></div>
+        <div style="margin-top: -15px;" class="item"><a href="signup"><u>Sign up</u></a></div>
+        <div style="margin-top: -15px;" class="item"><a href="signout">Sign out</a></div>
+
+    </div>
+</div>
+
+    <div style="margin-top: -48px;" class="signForm">
+        <form action="#" method="POST">
+            <p style="text-align:left;margin-top: -20px;">Username</p>
+            <input style="border-radius: 4px; border: 1px solid #000;margin-top: -20px;background-color: lightgray; opacity: 40%; color: black" type="text"  name="username" placeholder="Create a Username">
+            <br>
+             <p style="text-align:left;margin-top: -20px;">Mail</p>
+            <input style="border-radius: 4px; border: 1px solid #000;margin-top: -20px;background-color: lightgray; opacity: 40%; color: black"type="text"  name="mail" placeholder="Enter your Mail">
+            <br>
+             <p style="text-align:left;margin-top: -20px;">Password</p>
+            <input style="border-radius: 4px; border: 1px solid #000;margin-top: -20px;background-color: lightgray; opacity: 40%; color: black"type="password" name="password" placeholder="Create a password">
+            <br>
+             <p style="text-align:left;margin-top: -20px;">Re-Type your Password</p>
+            <input style="border-radius: 4px; border: 1px solid #000;margin-top: -20px;background-color: lightgray; opacity: 40%; color: black"type="password" name="retypedPassword" placeholder="Re-type your password">
+            <br>
+            <style>
+                input[type=submit] {
+                    width: 100%;
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 2px 20px;
+                    margin: 8px 0;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                input[type=submit]:hover {
+                    background-color: #45a049;
+                }
+            </style>
+        <input type="submit" value="Submit">
+        </form>  
+        <br><br>
+    </div>
+
+<h2 style="margin-top: -320px; color: midnightblue;">Create Account</h2>
+    <div class="flash">
+        {% if get_flashed_messages()%}
+        <p>{{ get_flashed_messages() }}</p>
+        {% endif %}
+      </div>
+    </div>
+    
+   
+{% endblock %}
