@@ -16,7 +16,7 @@ to the cityhall page.
 - [x] Javascript
 - [x] HTML and CSS
 - [x] Python - Flask
-- [ ] Not others code
+- [ ] Others code
 - [x] Git and Github
 - [x] Google Maps APIs
 
