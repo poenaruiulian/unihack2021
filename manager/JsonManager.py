@@ -1,4 +1,4 @@
-import urllib.request
+from urllib.request import Request, urlopen
 
 
 class JsonManager:
@@ -8,5 +8,5 @@ class JsonManager:
         self.url = url
 
     def connect(self):
-        fileobj = urllib.request.urlopen(self.url)
-        return fileobj.read()
+        fileobj = Request(self.url, headers={"User-Agent":"Chrome/106.0.0.0"})
+        return urlopen(fileobj).read()  
