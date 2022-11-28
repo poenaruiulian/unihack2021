@@ -24,13 +24,13 @@ to the cityhall page.
 
 ### Some preview of the project:
 
-<img src="./imagesForReadme/home.png" width="800" height="430">
-<img src="./imagesForReadme/home2.png" width="800" height="430">
-<img src="./imagesForReadme/home3.png" width="800" height="430">
-<img src="./imagesForReadme/login.png" width="800" height="430">
-<img src="./imagesForReadme/signup.png" width="800" height="430">
-<img src="./imagesForReadme/contact.png" width="800" height="430">
-<img src="./imagesForReadme/mater.png" width="800" height="430">
+<img src="./readmeIMG/home.png" width="800" height="430">
+<img src="./readmeIMG/home2.png" width="800" height="430">
+<img src="./readmeIMG/home3.png" width="800" height="430">
+<img src="./readmeIMG/login.png" width="800" height="430">
+<img src="./readmeIMG/signup.png" width="800" height="430">
+<img src="./readmeIMG/contact.png" width="800" height="430">
+<img src="./readmeIMG/mater.png" width="800" height="430">
 
 
 ---
