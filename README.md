@@ -25,7 +25,7 @@ to the cityhall page.
 ### Some preview of the project:
 
 <img src="./imagesForReadme/home.png" width="800" height="430">
-<img src="./imagesForReadme/home2.png" width="800" height="430">
+
 <img src="./imagesForReadme/home3.png" width="800" height="430">
 <img src="./imagesForReadme/login.png" width="800" height="430">
 <img src="./imagesForReadme/signup.png" width="800" height="430">
