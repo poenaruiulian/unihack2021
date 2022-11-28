@@ -22,6 +22,12 @@ to the cityhall page.
 
 ---
 
+### Some preview of the project:
+
+<img src="./imagesForReadme/home.png" width="800" height="430">
+
+
+---
 ### Team
 
 **Cristian**
